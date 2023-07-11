@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-2">
+            <h2>Liste de presence Simplon</h2>
+            <a class="btn btn-secondary float-right" href="{% url 'ajout-article' %}"><i class="fas fa-plus"></i> Ajouter participants</a>
+        
+            
+        </div>
+        <div class="col-md-12">
+
+            {% if list_inscrit %}
+
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="h6">Nom</th>
+                                <th class="h6">Prenom</th>
+                                <th class="h6">Numero</th>
+                                <th class="h6">email</th>
+
+                                <th class="float-right h6" style="margin-right: 55px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for article in list_inscrit %}
+                            <tr>
+                                <td>
+                                    <a href="" class="h6">{{article.nom}}</a>
+                                    
+                                </td>
+                                <td><a href="" class="h6">{{article.prenom |truncatewords:80}}</a></td>
+                                <td><a href="" class="h6">{{article.numero }}</a></td>
+                                <td><a href="" class="h6">{{article.email }}</a></td>
+                                <td>
+                                    <a href="{% url 'modif' article.id %}" class="btn btn-info float-right btn-sm " ><i class="fas fa-edit"></i></a>
+                                    <a href="{% url 'delete' article.id %}" class="btn btn-danger float-right btn-sm "style="right: 10px;"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {%else%}
+            <h2>Aucune personnes inscrit</h2>
+            {%endif%}
+        </div>
+    </div>
+</div>
+{% endblock %}

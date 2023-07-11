@@ -1,0 +1,15 @@
+jai creer l'application de avec le framework django de python 
+pour acceder à l'administration django 
+username= admin
+mot de passe =serge4249
+
+pour lancer se projet tu dois installer django
+puis telecharger le fichier zip sur github
+ apres tu vas decompresser et le mettre dans un dossier 
+ puis tu ouvres l'invite de commande 
+ apres tu rentre dans le dossier specifie
+ et apres tu tape la commande 
+ python manage.py runserver
+  une fois que c'est effectue tu va dans ton navigateur et tu rentre
+http://127.0.0.1:8000/
+
